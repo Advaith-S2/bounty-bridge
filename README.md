@@ -1,16 +1,35 @@
 # BountyBridge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application UI built for the UHV SEM IV college project.
 
-Currently, two official plugins are available:
+## Installation & Setup Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these steps to download and run the project locally on your machine:
 
-## React Compiler
+### 1. Clone the Repository
+Open your terminal or command prompt and run the following command to clone the project:
+```bash
+git clone https://github.com/Advaith-S2/bounty-bridge.git
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Navigate to the Project Directory
+Change your current directory to the cloned project folder:
+```bash
+cd bounty-bridge
+```
 
-## Expanding the ESLint configuration
+### 3. Install Dependencies
+Run the following command to install all required project dependencies:
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 4. Run the Development Server
+Start the local Vite development server:
+```bash
+npm run dev
+```
+
+### 5. View the Application
+Your terminal will display a local server URL (usually `http://localhost:5173/`).
+Open that link in your web browser to view the application.
