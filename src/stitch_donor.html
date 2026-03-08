@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BountyBridge | Donor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-6 lg:px-20 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-background-dark font-bold">eco</span>
+</div>
+<h2 class="text-xl font-black tracking-tight text-slate-900 dark:text-slate-100">BountyBridge</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-semibold text-primary" href="#">Donor Dashboard</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">NGO Dashboard</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-10 rounded-full bg-primary/20 border-2 border-primary/50 flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="User profile avatar smiling person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp_MTw_a_VWArDTGBBf7kjvcjEEAKG5NkaVtusI3CzxgJn1xjLlOxnaQgn8P_mRkdItt6iRBxXgLZpkDr0K83vk4lMdg3ZVea8fUheAPaaJNERPl5rdiCXxwygpXzra0whYIsSWVmgginz05UbxwyXyNK56MHpoIoGRKWQJj6OntE2c-TwvRJPqXeaOyY1LG-0e09YnZhtoYh6G6lY23BR2glPQHMniNh6CAEsh_Kxga797bEs4qeJasP_iwqIOnBlQMblhym3nfvC"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto w-full px-6 lg:px-20 py-8 lg:py-12">
+<div class="mb-10">
+<h1 class="text-4xl font-black tracking-tight mb-2">Donor Dashboard</h1>
+<p class="text-slate-600 dark:text-slate-400">Welcome back, share your surplus and make a difference today.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Section: Post Donation -->
+<section class="lg:col-span-5">
+<div class="bg-white dark:bg-slate-900/50 border border-primary/10 rounded-xl shadow-sm overflow-hidden">
+<div class="p-6 border-b border-primary/10 bg-primary/5">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">add_circle</span>
+<h3>Post New Donation</h3>
+</div>
+</div>
+<div class="p-6 space-y-5">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Food Name</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:ring-primary focus:border-primary transition-all" placeholder="e.g. Fresh Garden Salad" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Quantity</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:ring-primary focus:border-primary transition-all" placeholder="e.g. 15 servings" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Expiry Time</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:ring-primary focus:border-primary transition-all" type="time"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Pickup Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">location_on</span>
+<input class="w-full pl-10 rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:ring-primary focus:border-primary transition-all" placeholder="Street address or Landmark" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Description (Optional)</label>
+<textarea class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:ring-primary focus:border-primary transition-all" placeholder="Any dietary info or specific pickup instructions..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+                                Post Donation
+                            </button>
+</div>
+</div>
+</section>
+<!-- Right Section: My Donations -->
+<section class="lg:col-span-7">
+<div class="bg-white dark:bg-slate-900/50 border border-primary/10 rounded-xl shadow-sm h-full flex flex-col">
+<div class="p-6 border-b border-primary/10 flex justify-between items-center">
+<div class="flex items-center gap-2 text-slate-900 dark:text-slate-100 font-bold">
+<span class="material-symbols-outlined">history</span>
+<h3>My Recent Donations</h3>
+</div>
+<button class="text-primary text-sm font-semibold hover:underline">View All</button>
+</div>
+<div class="flex-1 overflow-y-auto max-h-[600px] p-6 space-y-4">
+<!-- Available Item -->
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all bg-slate-50/50 dark:bg-slate-900/30">
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">bakery_dining</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Assorted Bagels &amp; Muffins</h4>
+<p class="text-xs text-slate-500 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> Posted 2 hours ago
+                                        </p>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+<span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-primary/20 text-green-700 dark:text-primary flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-primary"></span>
+                                        Available
+                                    </span>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Claimed Item -->
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all bg-slate-50/50 dark:bg-slate-900/30">
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-lg bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-500 text-3xl">restaurant</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">10 Prepared Boxed Lunches</h4>
+<p class="text-xs text-slate-500 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> Posted 5 hours ago
+                                        </p>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+<span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-orange-500"></span>
+                                        Claimed
+                                    </span>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Available Item -->
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all bg-slate-50/50 dark:bg-slate-900/30">
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">nutrition</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Fruit Platter (Large)</h4>
+<p class="text-xs text-slate-500 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> Posted Yesterday
+                                        </p>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+<span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-primary/20 text-green-700 dark:text-primary flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-primary"></span>
+                                        Available
+                                    </span>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Empty State Illustration Placeholder (if no items) -->
+<!--
+                            <div class="flex flex-col items-center justify-center py-20 opacity-40">
+                                <span class="material-symbols-outlined text-6xl">inventory_2</span>
+                                <p class="mt-4 font-semibold">No donations yet</p>
+                            </div>
+                            -->
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-900 border-t border-primary/5 rounded-b-xl">
+<div class="flex items-center justify-between px-2">
+<div class="flex gap-4">
+<div class="text-center">
+<p class="text-xl font-black text-primary">12</p>
+<p class="text-[10px] uppercase font-bold text-slate-500">Total Shares</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-black text-primary">45kg</p>
+<p class="text-[10px] uppercase font-bold text-slate-500">CO2 Saved</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary/30 text-4xl">energy_savings_leaf</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="mt-auto py-10 px-6 lg:px-20 border-t border-primary/10 text-center">
+<p class="text-sm text-slate-500">© 2026 BountyBridge Foundation. Working towards zero food waste.</p>
+</footer>
+</div>
+</body></html>

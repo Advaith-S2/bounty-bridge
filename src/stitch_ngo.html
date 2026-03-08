@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BountyBridge - NGO Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 md:px-10 lg:px-20 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">diversity_1</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">BountyBridge</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary font-semibold text-sm" href="#">Marketplace</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">My Claims</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Impact</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Messages</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<label class="hidden sm:flex flex-col min-w-40 max-w-64 w-full">
+<div class="flex w-full items-center rounded-xl bg-primary/10 px-3 py-2 border border-transparent focus-within:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary text-xl">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500" placeholder="Search food nearby..." type="text"/>
+</div>
+</label>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined p-2 hover:bg-primary/10 rounded-full transition-colors">notifications</button>
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary/30" data-alt="User profile avatar">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="NGO representative profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2rXQaOBJ7ujplt5QQqeYC0bFY_aodZfnSBU4GmIeeFSWn0uxJ1LIL7j_hsT887SAYNdKvtz46e1V8xh_lhOuK5o68pKqj1p0TFycVptlIWMCBsNnT3_M76w8HEwWwbf5B-_t8H0rZ2xmB4FLb_S2a2wn10121MnyqcukxjUmMJFkQeOQNWLSTqLsmY0ES9AlAnkbNMUqZydfJpuyT5uDUMWUnbnYlMAUG35e7YOswW9yIofUHLKlmyx63tfYQdDziYK9VsBb66HJW"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 max-w-[1440px] mx-auto w-full px-4 md:px-10 lg:px-20 py-8 gap-8">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col w-64 shrink-0 gap-6">
+<div class="flex flex-col gap-1">
+<h3 class="text-slate-400 text-xs font-bold uppercase tracking-wider px-3 mb-2">NGO Portal</h3>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary text-background-dark font-bold shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined fill-1">storefront</span>
+<span>Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-medium">Active Pickups</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-medium">Claim History</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Organization Settings</span>
+</a>
+</div>
+<div class="mt-auto p-4 rounded-2xl bg-primary/5 border border-primary/10">
+<p class="text-xs text-slate-500 mb-2">Impact Goal</p>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full mb-3 overflow-hidden">
+<div class="bg-primary h-full w-[75%]"></div>
+</div>
+<p class="text-sm font-bold">1,240kg rescued</p>
+<p class="text-[10px] text-slate-500 uppercase">75% of monthly target</p>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0">
+<div class="flex flex-col gap-6">
+<!-- Filters & Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Marketplace</h1>
+<p class="text-slate-500 text-sm">Rescue available surplus food from local businesses.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl text-sm font-medium hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                                Filter
+                            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl text-sm font-medium hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-lg">sort</span>
+                                Nearest
+                            </button>
+</div>
+</div>
+<!-- Category Pills -->
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary text-background-dark font-semibold text-sm">All Donations</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary/10 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-primary/20">Vegetables</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary/10 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-primary/20">Prepared Meals</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary/10 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-primary/20">Bakery</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary/10 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-primary/20">Dairy</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary/10 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-primary/20">Grains</button>
+</div>
+<!-- Marketplace Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1: Available -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative aspect-video w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Crate of fresh organic tomatoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbz7EhB74SB1CpnoNlEZ7s_xMJRz9wpzv-MWkZrp66BY9JSKotFZKDZgc3eT2jUgetrAFuh0u_307BryZFSHaQxoIb2uhmilipvIJ81_Dcks_pipIEvJ560zVD7B8o6TrmwSVIGXVrbh3HgchBsNa0cDnWmblAL76jGcc9ghXpaQVo-sBmnURyQezb1Z4iUN4mH0mOESVjy20ABThKW4-khgJqVmF6uIdHoxQ0fOlURP2AKN9u0kYm0Q8s4r7oHPyIuU_zmqRPwh8I"/>
+<div class="absolute top-3 left-3 bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Fresh</div>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md">2.4 km away</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg leading-tight">Organic Heirloom Tomatoes</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg font-medium">12kg</span>
+</div>
+<p class="text-slate-500 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                        Green Market Central
+                                    </p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-medium text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                                        Expires in 2 days (Oct 24)
+                                    </div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_basket</span>
+                                    Claim Donation
+                                </button>
+</div>
+</div>
+<!-- Card 2: Urgent -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative aspect-video w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Mixed bakery pastries and bread" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh31uOA0XF5iUUPDoNg3upw1By3SmfgB8Qm08twLZ5wtl4qoAglMK8hY_AxjP00qypSTsFoc4HF0FCym3e5fhHX5ScAbb6qZcLzjpApKnlTGNIiHZuO1FuxIUjaBFfQPLgJFXulhtrloYmxc_J2__1HEjyaMJB37I5nlri75OtiUJl5xzGu6ye6zpixk9FSCkxkY-s7lk3ZL1GgV4DPhbxv6b4-LwVDImnGieCEnenM-MO4KIhvrwDSDbfR_9RgzAFFxTM-sAktUpb"/>
+<div class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Urgent</div>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md">0.8 km away</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg leading-tight">Assorted Morning Pastries</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg font-medium">45 units</span>
+</div>
+<p class="text-slate-500 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                        Artisan Bakehouse
+                                    </p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">timer</span>
+                                        Must be picked up within 4 hours
+                                    </div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_basket</span>
+                                    Claim Donation
+                                </button>
+</div>
+</div>
+<!-- Card 3: Claimed -->
+<div class="bg-white/50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm grayscale opacity-70">
+<div class="relative aspect-video w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Lentil soup in large containers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9LDLoFJodlzsw7mtNZy_X92Tjgp7PaFCYoDsmJ1yPym1dzahrMfTvRShISJtRjDN9Y2YI_OXj2OFskWZjV4t0_3JFk6XMoppzzFK8uQc1a-a2AMQz6lgH3KfkdX0wd1iBM3WwkCMU3eVkvKN7SZrDfPfsxh9kTI9ZvZjMjUELP7wSwAoSsIyvkcs6E66Yk5EGB-HE-ug_PfACUZgKUrYfAxnhEu1-wD5usWvdpVNf_rXm5rmLvsWn8vLyd487MZUMvEgATqxIQH-S"/>
+<div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
+<span class="bg-slate-900 text-white px-4 py-2 rounded-full font-bold text-sm">Already Claimed</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg leading-tight">Hot Vegetable Soup</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg font-medium">20 liters</span>
+</div>
+<p class="text-slate-500 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                        City Cafe &amp; Kitchen
+                                    </p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-800 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                        Claimed by Red Cross Shelter
+                                    </div>
+</div>
+<button class="w-full bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed font-bold py-3 rounded-xl transition-all" disabled="">
+                                    Not Available
+                                </button>
+</div>
+</div>
+<!-- Card 4: Available -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative aspect-video w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Pantry staples including rice and milk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwzT7itgMMprQQfJz31Zc8TDFgwQx-n0wdRPbeZ4xyvm-Oh_rrYUNO0UUOTlg2fpJvFAxLP7Be6sh9pTzyat4xfqeWcfDru4-BHa4BE02qrAokkfQj38kVYBdXsuz-AenYH5FIR4j52n4BL-cTypAKCUuPJOQAh71hypi4VNsIWtq7AyBYiAhg3jJCVjzzyKahUJA8eMQE7rqtU1FNoNkC4sksI6I9qNLMCAYqavfWgiVBi9VJHTk7X1yW3T_y82GpKtPguhqkJTp9"/>
+<div class="absolute top-3 left-3 bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Bulk</div>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md">5.2 km away</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg leading-tight">Pantry Essentials Pack</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg font-medium">25kg</span>
+</div>
+<p class="text-slate-500 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                        Metro Supermarket
+                                    </p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                        Expires in 1 week (Oct 30)
+                                    </div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_basket</span>
+                                    Claim Donation
+                                </button>
+</div>
+</div>
+<!-- Card 5: Available -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative aspect-video w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Prepared caterings meal boxes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UKFPlslkZliDmZinRqNbqUe-6ftHU6LlLtyla69TIHWs5cHeNCRtUtT80has3zbgvkMI773LZPvjGy8S1Qbh2n6fwp5yjRD4hEAe8nTd0nP5WtguVVlxYiDH99A9LLlpYbdUhxIZYJheLptd3OZjQrdMUf6Z4gFjrnpZZ25Sly2k0NxQt7UnkapPxu4lFZZqNBsCeU0RNoF_6zTXhfY88Ix7DTHMyF_8My6ng83XrHFdQtH3nO86QWrrpwEQcFI-vVXeEkClIoHH"/>
+<div class="absolute top-3 left-3 bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Prepared</div>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md">1.5 km away</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg leading-tight">Catered Lunch Boxes</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg font-medium">15 servings</span>
+</div>
+<p class="text-slate-500 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                        Corporate Events Plaza
+                                    </p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-medium text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                                        Expires Today (by 8 PM)
+                                    </div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_basket</span>
+                                    Claim Donation
+                                </button>
+</div>
+</div>
+<!-- Card 6: Available -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative aspect-video w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Seasonal fruits like apples and oranges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqyBOBuJtufKb7zMTobVpAebDOxqiyEFTCWqCnnVf6PY1X-31SkXbcKlvrk4R5szxhmXoo8qyhbn4h3L7g0mg6TplOgHN79NVExDghQQ8r2yJnnXoXcgumU_KH13uZjJJcXObn8c54LivU7c_PN36V4Z-LpwzQLWJPKgt_jov7Q5Hkj6lNd5g8QRhmNBZgY50bhcSnwQBgi-GH1s3pPClWAc_HWCGXsD96cXgfjCt02IByK_i0jY_EQnmj7PujIYE0ATawl6qNhzIk"/>
+<div class="absolute top-3 left-3 bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Seasonal</div>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md">3.1 km away</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg leading-tight">Fresh Fruit Basket</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg font-medium">8kg</span>
+</div>
+<p class="text-slate-500 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                        Sunny Orchards
+                                    </p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                        Expires in 3 days (Oct 25)
+                                    </div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_basket</span>
+                                    Claim Donation
+                                </button>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="flex justify-center mt-8">
+<button class="px-8 py-3 rounded-xl border border-primary/30 text-primary font-bold hover:bg-primary/10 transition-colors">
+                            Load More Available Items
+                        </button>
+</div>
+</div>
+</main>
+</div>
+<!-- Floating Action for Mobile -->
+<button class="fixed bottom-6 right-6 lg:hidden bg-primary text-background-dark size-14 rounded-full shadow-2xl flex items-center justify-center z-50">
+<span class="material-symbols-outlined text-3xl">map</span>
+</button>
+</div>
+</body></html>
